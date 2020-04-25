@@ -29,33 +29,48 @@
         private void InitializeComponent()
         {
             this.dtVistaRoles = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtVistaRoles)).BeginInit();
             this.SuspendLayout();
             // 
             // dtVistaRoles
             // 
+            this.dtVistaRoles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtVistaRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtVistaRoles.Location = new System.Drawing.Point(43, 86);
+            this.dtVistaRoles.Location = new System.Drawing.Point(12, 107);
             this.dtVistaRoles.Name = "dtVistaRoles";
-            this.dtVistaRoles.Size = new System.Drawing.Size(707, 311);
+            this.dtVistaRoles.Size = new System.Drawing.Size(774, 271);
             this.dtVistaRoles.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(177, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Roles de Usuario";
             // 
             // frmRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 457);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dtVistaRoles);
             this.Name = "frmRoles";
             this.Text = "Roles";
             this.Load += new System.EventHandler(this.Roles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtVistaRoles)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dtVistaRoles;
+        private System.Windows.Forms.Label label1;
     }
 }

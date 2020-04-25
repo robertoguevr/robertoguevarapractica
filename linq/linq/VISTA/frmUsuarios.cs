@@ -40,11 +40,7 @@ namespace linq.VISTA
         }
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            using (sistema_ventasEntities db = new sistema_ventasEntities()) 
-            {
-                cargardatos();
-                limpiardatos();
-            }
+           
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -106,6 +102,15 @@ namespace linq.VISTA
         private void Usuarios_Load(object sender, EventArgs e)
         {
             cargardatos();
+        }
+
+        private void btnRecargar_Click(object sender, EventArgs e)
+        {
+            using (sistema_ventasEntities db = new sistema_ventasEntities())
+            {
+                cargardatos();
+                limpiardatos();
+            }
         }
     }
 }

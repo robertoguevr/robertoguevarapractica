@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using linq.VISTA;
+using linq.VISTA.formularioBusqueda;
 
 namespace linq
 {
@@ -17,7 +18,7 @@ namespace linq
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Logueo());
+            Application.Run(new frmMenu());
         }
     }
 }
