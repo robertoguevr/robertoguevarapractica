@@ -55,7 +55,9 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTotalVenta = new System.Windows.Forms.TextBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dtvVentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -298,20 +300,38 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(543, 449);
+            this.label4.Location = new System.Drawing.Point(290, 454);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 31);
             this.label4.TabIndex = 22;
             this.label4.Text = "Total $:";
             // 
-            // textBox1
+            // txtTotalVenta
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(642, 429);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 51);
-            this.textBox1.TabIndex = 23;
+            this.txtTotalVenta.Enabled = false;
+            this.txtTotalVenta.Location = new System.Drawing.Point(389, 434);
+            this.txtTotalVenta.Multiline = true;
+            this.txtTotalVenta.Name = "txtTotalVenta";
+            this.txtTotalVenta.Size = new System.Drawing.Size(190, 51);
+            this.txtTotalVenta.TabIndex = 23;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(718, 434);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(88, 43);
+            this.btnGuardar.TabIndex = 24;
+            this.btnGuardar.Text = "GUARDAR VENTA";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.CustomFormat = "yyyy-MM-dd";
+            this.dtpFecha.Location = new System.Drawing.Point(591, 69);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha.TabIndex = 25;
             // 
             // FrmVentas
             // 
@@ -319,7 +339,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 497);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dtpFecha);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.txtTotalVenta);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtTotal);
@@ -374,12 +396,14 @@
         public System.Windows.Forms.TextBox txtProducto;
         public System.Windows.Forms.TextBox txtPrecioProducto;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTotalVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn CODIGO;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CANTIDAD;
         private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL;
         public System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
     }
 }

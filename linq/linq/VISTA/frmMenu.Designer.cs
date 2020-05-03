@@ -60,14 +60,14 @@
             // uSUARIOSToolStripMenuItem
             // 
             this.uSUARIOSToolStripMenuItem.Name = "uSUARIOSToolStripMenuItem";
-            this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.uSUARIOSToolStripMenuItem.Text = "USUARIOS";
             this.uSUARIOSToolStripMenuItem.Click += new System.EventHandler(this.uSUARIOSToolStripMenuItem_Click);
             // 
             // rOLESToolStripMenuItem
             // 
             this.rOLESToolStripMenuItem.Name = "rOLESToolStripMenuItem";
-            this.rOLESToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.rOLESToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.rOLESToolStripMenuItem.Text = "ROLES";
             this.rOLESToolStripMenuItem.Click += new System.EventHandler(this.rOLESToolStripMenuItem_Click);
             // 

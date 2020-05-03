@@ -83,7 +83,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.dtvBusqueda);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmBusqueda";
             this.Text = "FrmBusqueda";
             this.Load += new System.EventHandler(this.FrmBusqueda_Load);
