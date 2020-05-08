@@ -40,8 +40,7 @@
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.lblTipoDoc = new System.Windows.Forms.Label();
             this.cmbTipoDoc = new System.Windows.Forms.ComboBox();
-            this.lblBuscar = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.lblCodProd = new System.Windows.Forms.Label();
             this.txtIdProdcuto = new System.Windows.Forms.TextBox();
@@ -58,6 +57,7 @@
             this.txtTotalVenta = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtvVentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,22 +160,14 @@
             this.cmbTipoDoc.Size = new System.Drawing.Size(121, 21);
             this.cmbTipoDoc.TabIndex = 7;
             // 
-            // lblBuscar
+            // txtBuscar
             // 
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Location = new System.Drawing.Point(16, 111);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(86, 13);
-            this.lblBuscar.TabIndex = 8;
-            this.lblBuscar.Text = "Buscar Producto";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(113, 111);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(122, 20);
-            this.textBox2.TabIndex = 9;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtBuscar.Location = new System.Drawing.Point(113, 111);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(178, 20);
+            this.txtBuscar.TabIndex = 9;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyUp);
             // 
             // btnSearch
             // 
@@ -183,7 +175,7 @@
             this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.btnSearch.IconColor = System.Drawing.Color.Black;
             this.btnSearch.IconSize = 16;
-            this.btnSearch.Location = new System.Drawing.Point(241, 109);
+            this.btnSearch.Location = new System.Drawing.Point(306, 109);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Rotation = 0D;
             this.btnSearch.Size = new System.Drawing.Size(60, 23);
@@ -222,7 +214,7 @@
             this.txtProducto.Enabled = false;
             this.txtProducto.Location = new System.Drawing.Point(354, 161);
             this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(122, 20);
+            this.txtProducto.Size = new System.Drawing.Size(276, 20);
             this.txtProducto.TabIndex = 14;
             this.txtProducto.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -260,6 +252,7 @@
             this.txtCantidad.TabIndex = 18;
             this.txtCantidad.Text = "1";
             this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
+            this.txtCantidad.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCantidad_KeyUp);
             // 
             // label3
             // 
@@ -333,12 +326,21 @@
             this.dtpFecha.Size = new System.Drawing.Size(200, 20);
             this.dtpFecha.TabIndex = 25;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(15, 118);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Buscar";
+            // 
             // FrmVentas
             // 
-            this.AcceptButton = this.btnAgregar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 497);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtTotalVenta);
@@ -355,8 +357,7 @@
             this.Controls.Add(this.txtIdProdcuto);
             this.Controls.Add(this.lblCodProd);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.lblBuscar);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.cmbTipoDoc);
             this.Controls.Add(this.lblTipoDoc);
             this.Controls.Add(this.cmbCliente);
@@ -382,8 +383,7 @@
         private System.Windows.Forms.ComboBox cmbCliente;
         private System.Windows.Forms.Label lblTipoDoc;
         private System.Windows.Forms.ComboBox cmbTipoDoc;
-        private System.Windows.Forms.Label lblBuscar;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBuscar;
         private FontAwesome.Sharp.IconButton btnSearch;
         private System.Windows.Forms.Label lblCodProd;
         private System.Windows.Forms.Label lblNombreProd;
@@ -405,5 +405,6 @@
         public System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.Label label5;
     }
 }

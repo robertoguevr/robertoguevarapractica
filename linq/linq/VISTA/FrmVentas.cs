@@ -124,8 +124,7 @@ namespace linq.VISTA
             catch (Exception ex)
             {
 
-                txtCantidad.Text = "0";
-                MessageBox.Show("No se pueden operar datos menores a 0");
+                txtCantidad.Text = "1";
                 txtCantidad.Select();
             }
         }
@@ -157,11 +156,11 @@ namespace linq.VISTA
 
 
                     String precio = dtvVentas.Rows[i].Cells[2].Value.ToString();
-                    Decimal precioConvertido = Convert.ToInt32(precio);
+                    Decimal precioConvertido = Convert.ToDecimal(precio);
 
 
                     String total = dtvVentas.Rows[i].Cells[4].Value.ToString();
-                    Decimal totalConvertido = Convert.ToInt32(total);
+                    Decimal totalConvertido = Convert.ToDecimal(total);
 
 
                     dete.idVenta = Convert.ToInt32(txtNumVenta.Text);
@@ -171,8 +170,61 @@ namespace linq.VISTA
                     dete.total = totalConvertido;
                     db.detalleVenta.Add(dete);
                     db.SaveChanges();
+                    txtIdProdcuto.Text = "";
+                    txtProducto.Text = "";
+                    txtPrecioProducto.Text = "";
+                    txtTotal.Text = "";
                 }
             }
+            retornoId();
+        }
+
+        private void textBox2_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(txtBuscar.Text=="") 
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    btnSearch.PerformClick();
+                } else if (e.KeyCode == Keys.Enter) 
+                {
+                    using (sistema_ventasEntities bd = new sistema_ventasEntities()) 
+                    {
+                        producto prod = new producto();
+                        int buscar = int.Parse(txtBuscar.Text);
+                        prod = bd.producto.Where(idBuscar => idBuscar.idProducto == buscar).First();
+                        txtIdProdcuto.Text = Convert.ToString(prod.idProducto);
+                        txtProducto.Text = Convert.ToString(prod.nombreProducto);
+                        txtPrecioProducto.Text = Convert.ToString(prod.precioProducto);
+                        txtCantidad.Focus();
+                        txtBuscar.Text = "";
+                    }
+                }
+            }
+        }
+
+
+        int intentos = 1;
+        private void txtCantidad_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (intentos == 2) {
+                    
+                btnAgregar.PerformClick();
+               
+                txtIdProdcuto.Text = "";
+                txtProducto.Text = "";
+                txtPrecioProducto.Text = "";
+                txtTotal.Text = "";
+                intentos = 0;
+                txtCantidad.Text = "1";
+                txtBuscar.Focus();
+                }
+                intentos += 1;
+            }
+              
+                
         }
     }
 }
