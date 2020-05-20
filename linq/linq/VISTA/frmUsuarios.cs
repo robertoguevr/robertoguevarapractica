@@ -23,13 +23,13 @@ namespace linq.VISTA
         {
             using (sistema_ventasEntities db = new sistema_ventasEntities())
             {
-                //    var tb_usuarios = db.tb_usuarios;
-                //    foreach (var interarDatosTbUsuarios in tb_usuarios) 
-                //    {
-                //        dtvUsuarios.Rows.Add(interarDatosTbUsuarios.Email, interarDatosTbUsuarios.Contrasena);
-                //    }
+                var tb_usuarios = db.tb_usuarios;
+                foreach (var iterarDatosTbUsuarios in tb_usuarios)
+                {
+                    dtvUsuarios.Rows.Add(iterarDatosTbUsuarios.Id, iterarDatosTbUsuarios.Email, iterarDatosTbUsuarios.Contrasena);
+                }
 
-                dtvUsuarios.DataSource = db.tb_usuarios.ToList();
+                //dtvUsuarios.DataSource = db.tb_usuarios.ToList();
             }
         }
 
@@ -111,6 +111,11 @@ namespace linq.VISTA
                 cargardatos();
                 limpiardatos();
             }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

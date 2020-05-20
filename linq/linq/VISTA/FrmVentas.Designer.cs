@@ -58,6 +58,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtvVentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +78,7 @@
             this.dtvVentas.ReadOnly = true;
             this.dtvVentas.Size = new System.Drawing.Size(845, 112);
             this.dtvVentas.TabIndex = 0;
+            this.dtvVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvVentas_CellContentClick);
             // 
             // CODIGO
             // 
@@ -335,11 +337,30 @@
             this.label5.TabIndex = 26;
             this.label5.Text = "Buscar";
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.Firebrick;
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconSize = 21;
+            this.iconButton1.Location = new System.Drawing.Point(815, 1);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Rotation = 0D;
+            this.iconButton1.Size = new System.Drawing.Size(56, 26);
+            this.iconButton1.TabIndex = 27;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(869, 497);
+            this.ControlBox = false;
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.btnGuardar);
@@ -365,6 +386,7 @@
             this.Controls.Add(this.txtNumVenta);
             this.Controls.Add(this.lblNumVentas);
             this.Controls.Add(this.dtvVentas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmVentas";
             this.Text = "FrmVentas";
             this.Load += new System.EventHandler(this.FrmVentas_Load);
@@ -406,5 +428,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label label5;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

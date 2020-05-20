@@ -177,6 +177,8 @@ namespace linq.VISTA
                 }
             }
             retornoId();
+            dtvVentas.Rows.Clear();
+            txtTotalVenta.Text = "";
         }
 
         private void textBox2_KeyUp(object sender, KeyEventArgs e)
@@ -198,9 +200,11 @@ namespace linq.VISTA
                         txtPrecioProducto.Text = Convert.ToString(prod.precioProducto);
                         txtCantidad.Focus();
                         txtBuscar.Text = "";
+                        intentos = 2;
                     }
                 }
             }
+            txtBuscar.Text = "";
         }
 
 
@@ -225,6 +229,16 @@ namespace linq.VISTA
             }
               
                 
+        }
+
+        private void dtvVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }
