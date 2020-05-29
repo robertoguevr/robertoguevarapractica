@@ -40,7 +40,6 @@
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.lblTipoDoc = new System.Windows.Forms.Label();
             this.cmbTipoDoc = new System.Windows.Forms.ComboBox();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.lblCodProd = new System.Windows.Forms.Label();
             this.txtIdProdcuto = new System.Windows.Forms.TextBox();
@@ -59,6 +58,8 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnBorrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtvVentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +80,7 @@
             this.dtvVentas.Size = new System.Drawing.Size(845, 112);
             this.dtvVentas.TabIndex = 0;
             this.dtvVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvVentas_CellContentClick);
+            this.dtvVentas.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dtvVentas_RowsRemoved);
             // 
             // CODIGO
             // 
@@ -161,15 +163,6 @@
             this.cmbTipoDoc.Name = "cmbTipoDoc";
             this.cmbTipoDoc.Size = new System.Drawing.Size(121, 21);
             this.cmbTipoDoc.TabIndex = 7;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(113, 111);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(178, 20);
-            this.txtBuscar.TabIndex = 9;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyUp);
             // 
             // btnSearch
             // 
@@ -353,6 +346,23 @@
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(113, 111);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(169, 20);
+            this.txtBuscar.TabIndex = 28;
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Location = new System.Drawing.Point(678, 150);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(91, 23);
+            this.btnBorrar.TabIndex = 29;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,6 +370,8 @@
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(869, 497);
             this.ControlBox = false;
+            this.Controls.Add(this.btnBorrar);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dtpFecha);
@@ -378,7 +390,6 @@
             this.Controls.Add(this.txtIdProdcuto);
             this.Controls.Add(this.lblCodProd);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.cmbTipoDoc);
             this.Controls.Add(this.lblTipoDoc);
             this.Controls.Add(this.cmbCliente);
@@ -405,7 +416,6 @@
         private System.Windows.Forms.ComboBox cmbCliente;
         private System.Windows.Forms.Label lblTipoDoc;
         private System.Windows.Forms.ComboBox cmbTipoDoc;
-        private System.Windows.Forms.TextBox txtBuscar;
         private FontAwesome.Sharp.IconButton btnSearch;
         private System.Windows.Forms.Label lblCodProd;
         private System.Windows.Forms.Label lblNombreProd;
@@ -429,5 +439,7 @@
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label label5;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnBorrar;
     }
 }

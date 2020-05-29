@@ -62,11 +62,6 @@ namespace linq.VISTA
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
@@ -90,15 +85,7 @@ namespace linq.VISTA
             }
 
             dtvVentas.Rows.Add(txtIdProdcuto.Text, txtProducto.Text, txtPrecioProducto.Text, txtCantidad.Text, txtTotal.Text);
-            Double suma = 0;
-            for (int i=0; i<dtvVentas.RowCount;i++) 
-            {
-                String datosAOperar = dtvVentas.Rows[i].Cells[4].Value.ToString();
-                Double datosConvertidos = Convert.ToDouble(datosAOperar);
-                suma += datosConvertidos;
-
-                txtTotalVenta.Text = suma.ToString();
-            }
+            calcularTotal();
         }
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)
@@ -127,6 +114,26 @@ namespace linq.VISTA
                 txtCantidad.Text = "1";
                 txtCantidad.Select();
             }
+        }
+
+        void calcularTotal() 
+        {
+            Double suma = 0;
+            for (int i = 0; i < dtvVentas.RowCount; i++)
+            {
+                String datosAOperar = dtvVentas.Rows[i].Cells[4].Value.ToString();
+                Double datosConvertidos = Convert.ToDouble(datosAOperar);
+                suma += datosConvertidos;
+
+                txtTotalVenta.Text = suma.ToString();
+            }
+
+            dtvVentas.Refresh();
+            dtvVentas.ClearSelection();
+            int ulitmaFila = dtvVentas.Rows.Count - 1;
+            dtvVentas.FirstDisplayedScrollingRowIndex = ulitmaFila;
+            dtvVentas.Rows[ulitmaFila].Selected = true;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -239,6 +246,16 @@ namespace linq.VISTA
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void dtvVentas_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            calcularTotal();
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            dtvVentas.Rows.Remove(dtvVentas.CurrentRow);
         }
     }
 }
